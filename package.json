@@ -1,0 +1,25 @@
+{
+  "name": "learning-rollup-babel-7",
+  "version": "1.0.0",
+  "description": "Tests using Rollup with Babel 7",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninetails/learning-rollup-babel-7.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ninetails/learning-rollup-babel-7/issues"
+  },
+  "homepage": "https://github.com/ninetails/learning-rollup-babel-7#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^4.0.0-beta.3"
+  }
+}
