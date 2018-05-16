@@ -1,5 +1,9 @@
 {
   "presets": [
-    ["@babel/preset-env", { "modules": false, "targets": ["last 2 versions", "IE > 7"] }]
+    ["@babel/preset-env", { "modules": false }],
+    ["@babel/preset-stage-0", { "decoratorsLegacy": true }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-pipeline-operator"
   ]
 }

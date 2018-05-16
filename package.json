@@ -4,7 +4,14 @@
   "description": "Tests using Rollup with Babel 7",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c"
+    "lint": "eslint src",
+    "clean": "rm -rf dist",
+    "prebuild": "cp -r public dist/",
+    "build": "rollup -c",
+    "cert": "tls-keygen",
+    "serve": "http-server dist -S -g --cors",
+    "all": "npm run clean && npm run prebuild && npm run build && npm run cert && npm run serve",
+    "babel": "babel src --out-dir dist --source-maps"
   },
   "repository": {
     "type": "git",
@@ -18,13 +25,26 @@
   },
   "homepage": "https://github.com/ninetails/learning-rollup-babel-7#readme",
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.47",
     "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-stage-0": "^7.0.0-beta.47",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "http-server": "^0.11.1",
+    "husky": "^0.14.3",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^4.0.0-beta.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "tls-keygen": "^3.4.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.44"
